@@ -4,6 +4,7 @@ import DutyList from "../index";
 import { RuleManager } from "../../../../../models/rules/RuleManager";
 import { DriverShiftRule } from "../../../../../models/rules/DriverShiftRule";
 import { BusDuty } from "../../../../../models/duty/BusDuty";
+import React from "react"; // Add this line
 
 describe("DutyList", () => {
   const mockRuleManager = new RuleManager();
@@ -12,14 +13,14 @@ describe("DutyList", () => {
     {
       id: 140,
       depot: "Ealing",
-      name: "Duty 140",
+      name: "Duty 1",
       start: "2024-11-01T05:15:00",
       end: "2024-11-01T08:45:00",
     },
     {
       id: 151,
       depot: "Westminster",
-      name: "Duty 151",
+      name: "Duty 2",
       start: "2024-11-01T07:30:00",
       end: "2024-11-01T12:00:00",
     },

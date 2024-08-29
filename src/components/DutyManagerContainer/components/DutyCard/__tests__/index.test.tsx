@@ -29,7 +29,7 @@ describe("DutyCard Component with mocked ruleManager", () => {
 
     expect(screen.getByText("Morning Shift")).toBeInTheDocument();
     expect(screen.getByText("Depot A")).toBeInTheDocument();
-    expect(screen.getByText("Sep 1, 2024,")).toBeInTheDocument();
+    expect(screen.getByText("Sep 1st, 2024")).toBeInTheDocument();
     expect(screen.getByText("08:00 - 12:00")).toBeInTheDocument();
   });
 
