@@ -16,13 +16,15 @@ const DutyList: React.FC<DutyListProps> = ({
 }) => (
   <div className="duty-list">
     <h2 className="">{title}</h2>
-    {duties.map((duty) => (
-      <DutyCard
-        onDutyClick={() => onDutyClick(duty)}
-        key={duty.id}
-        duty={duty}
-      />
-    ))}
+    <div className="duty-card-container">
+      {duties.map((duty) => (
+        <DutyCard
+          onDutyClick={() => onDutyClick(duty)}
+          key={duty.id}
+          duty={duty}
+        />
+      ))}
+    </div>
   </div>
 );
 
