@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable react/react-in-jsx-scope */
+import React from "react";
 import { Duty } from "../../../../models/duty/Duty";
 import DutyCard from "../DutyCard";
 
@@ -28,4 +28,4 @@ const DutyList: React.FC<DutyListProps> = ({
   </div>
 );
 
-export default DutyList;
+export default React.memo(DutyList);

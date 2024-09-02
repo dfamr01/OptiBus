@@ -19,17 +19,17 @@ describe("DutyCard Component with mocked ruleManager", () => {
     id: 1,
     name: "Morning Shift",
     depot: "Depot A",
-    start: "2024-09-01T08:00:00",
-    end: "2024-09-01T12:00:00",
+    start: "2024-09-01T08:00:00Z",
+    end: "2024-09-01T12:00:00Z",
     ruleManager: mockRuleManager,
   });
 
   it("should render the duty name, depot, and time", () => {
-    render(<DutyCard duty={mockDuty} onDutyClick={() => {}} />);
+    render(<DutyCard duty={mockDuty} onDutyClick={() => { }} />);
 
     expect(screen.getByText("Morning Shift")).toBeInTheDocument();
     expect(screen.getByText("Depot A")).toBeInTheDocument();
-    expect(screen.getByText("Sep 1st, 2024")).toBeInTheDocument();
+    expect(screen.getByText("Sun 1st Sep,")).toBeInTheDocument();
     expect(screen.getByText("08:00 - 12:00")).toBeInTheDocument();
   });
 
@@ -44,29 +44,32 @@ describe("DutyCard Component with mocked ruleManager", () => {
   });
 
   it("should display a warning if duty has a warning", () => {
-    const dutyWithWarning = {
-      ...mockDuty,
-      warning: "You have duty at this time",
-    };
-    render(<DutyCard duty={dutyWithWarning} onDutyClick={() => {}} />);
+    const dutyWithWarning = Object.assign(
+      Object.create(Object.getPrototypeOf(mockDuty)),
+      mockDuty
+    );
+    dutyWithWarning.warning = "You have duty at this time";
+
+    render(<DutyCard duty={dutyWithWarning} onDutyClick={() => { }} />);
 
     expect(screen.getByText("⚠️")).toBeInTheDocument();
     expect(screen.getByText("You have duty at this time")).toBeInTheDocument();
   });
 
   it("should disable the button if duty has a warning", () => {
-    const dutyWithWarning = {
-      ...mockDuty,
-      warning: "You have duty at this time",
-    };
-    render(<DutyCard duty={dutyWithWarning} onDutyClick={() => {}} />);
+    const dutyWithWarning = Object.assign(
+      Object.create(Object.getPrototypeOf(mockDuty)),
+      mockDuty
+    );
+    dutyWithWarning.warning = "You have duty at this time";
+    render(<DutyCard duty={dutyWithWarning} onDutyClick={() => { }} />);
 
     const button = screen.getByRole("button");
     expect(button).toBeDisabled();
   });
 
   it("should not display a warning if duty does not have one", () => {
-    render(<DutyCard duty={mockDuty} onDutyClick={() => {}} />);
+    render(<DutyCard duty={mockDuty} onDutyClick={() => { }} />);
     expect(screen.queryByText("⚠️")).not.toBeInTheDocument();
   });
 

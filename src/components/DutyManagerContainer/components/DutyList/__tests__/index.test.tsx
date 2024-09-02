@@ -14,15 +14,15 @@ describe("DutyList", () => {
       id: 140,
       depot: "Ealing",
       name: "Duty 1",
-      start: "2024-11-01T05:15:00",
-      end: "2024-11-01T08:45:00",
+      start: "2024-11-01T05:15:00Z",
+      end: "2024-11-01T08:45:00Z",
     },
     {
       id: 151,
       depot: "Westminster",
       name: "Duty 2",
-      start: "2024-11-01T07:30:00",
-      end: "2024-11-01T12:00:00",
+      start: "2024-11-01T07:30:00Z",
+      end: "2024-11-01T12:00:00Z",
     },
   ];
   const duties = dutiesMockData.map((duty) => {

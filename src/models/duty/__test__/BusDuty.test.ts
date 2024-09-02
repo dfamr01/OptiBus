@@ -2,7 +2,7 @@ import { RuleManager } from "../../rules/RuleManager";
 import { BusDuty } from "../BusDuty";
 
 // Mock RuleManager
-jest.mock("../../models/rules/RuleManager");
+jest.mock("../../rules/RuleManager");
 
 describe("BusDuty", () => {
   let busDuty: BusDuty;
