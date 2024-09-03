@@ -19,7 +19,7 @@ const DutyList: React.FC<DutyListProps> = ({
     <div className="duty-card-container">
       {duties.map((duty) => (
         <DutyCard
-          onDutyClick={() => onDutyClick(duty)}
+          onDutyClick={onDutyClick}
           key={duty.id}
           duty={duty}
         />
