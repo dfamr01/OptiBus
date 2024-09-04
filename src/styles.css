@@ -1,14 +1,22 @@
 html {
   font-size: 16px;
+  @media only screen and (max-width: 600px) {
+    font-size: 10px;
+  }
+}
+
+body {
+  margin: 0;
 }
 
 #root {
+  display: flex;
+  justify-content: center;
   font-family: Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   overflow: auto;
   max-height: 100vh;
-  width: 100vw;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,20 +25,12 @@ html {
 }
 
 .App {
+  margin: 10px;
   text-align: center;
   justify-content: center;
   display: flex;
   overflow: auto;
   max-height: 100vh;
-}
-
-.duty-manager {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* display: flex; */
-  justify-content: space-between;
-  border: 1px solid #ccc;
-  padding: 10px;
 }
 
 .spacer {
@@ -52,7 +52,6 @@ html {
   max-height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0 5px;
   border: 1px solid transparent;
   padding: 0.6rem 1.2rem;
 }
@@ -69,11 +68,9 @@ html {
   border-radius: 8px;
 
   border: 1px solid transparent;
-  /* padding: 0.6em 1.2em; */
   font-size: 1rem;
   font-weight: 500;
   font-family: inherit;
-  cursor: pointer;
   transition: border-color 0.25s;
 }
 
