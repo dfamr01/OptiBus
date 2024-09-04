@@ -1,6 +1,9 @@
-import React from 'react';
-import { formatDateFromISOString, formatTimeFromISOString } from '../../../../../../shared/utils';
-import { Duty } from '../../../../../../shared/models/duties/Duty';
+import React from "react";
+import {
+  formatDateFromISOString,
+  formatTimeFromISOString,
+} from "../../../../../../shared/utils";
+import { Duty } from "../../../../../../shared/models/duties/Duty";
 
 interface DutyCardProps {
   duty: Duty;
@@ -15,28 +18,33 @@ const DutyCard: React.FC<DutyCardProps> = ({ duty, onDutyClick }) => {
   const formattedEndTime = formatTimeFromISOString(end);
 
   const onClick = () => {
-    onDutyClick(duty)
-  }
+    onDutyClick(duty);
+  };
+  const ariaLabel = `Duty ${name} at ${depot}, ${formattedDate}, ${formattedStartTime} to ${formattedEndTime}`;
 
   return (
     <button
       dir="auto"
       onClick={onClick}
       disabled={!!warning}
-      className={`duty-card ${warning ? 'disabled' : ''}`}
-      aria-label={`Duty ${name} at ${depot}, ${formattedDate}, ${formattedStartTime} to ${formattedEndTime}`}
+      className={`duty-card`}
+      aria-label={ariaLabel}
     >
       <div className="duty-info">
         <span className="font-bold">{name}</span>
-        <span className="spacer" aria-hidden="true">|</span>
+        <span className="spacer" aria-hidden="true">
+          |
+        </span>
         <span>{depot}</span>
       </div>
       <div className="duty-time">
         <span>{formattedDate}, </span>
-        <span>{formattedStartTime} - {formattedEndTime}</span>
+        <span>
+          {formattedStartTime} - {formattedEndTime}
+        </span>
       </div>
       {warning && (
-        <div className="warning" role="alert">
+        <div className="warning" role="alert" aria-live="polite">
           <span aria-hidden="true">⚠️</span>
           <span className="warning-text">{warning}</span>
         </div>
@@ -44,5 +52,7 @@ const DutyCard: React.FC<DutyCardProps> = ({ duty, onDutyClick }) => {
     </button>
   );
 };
+
+DutyCard.displayName = 'DutyCard';
 
 export default DutyCard;

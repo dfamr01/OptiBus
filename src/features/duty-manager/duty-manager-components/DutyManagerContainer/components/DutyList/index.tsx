@@ -28,4 +28,6 @@ const DutyList: React.FC<DutyListProps> = ({
   </div>
 );
 
+DutyList.displayName = 'DutyList';
+
 export default React.memo(DutyList);
