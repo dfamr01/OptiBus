@@ -36,7 +36,7 @@ const DutyManagerContainer: React.FC = () => {
   }, []);
 
   return (
-    <div className="duty-manager-container">
+    <div dir="auto" className="duty-manager-container">
       <DutyList
         title="Available duties"
         onDutyClick={assignDuty}
