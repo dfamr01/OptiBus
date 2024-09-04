@@ -16,6 +16,7 @@ const DutyCard: React.FC<DutyCardProps> = ({ duty, onDutyClick }) => {
 
   return (
     <button
+      dir="auto"
       onClick={() => onDutyClick(duty)}
       disabled={!!warning}
       className="duty-card"
