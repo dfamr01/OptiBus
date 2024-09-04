@@ -53,6 +53,4 @@ const DutyCard: React.FC<DutyCardProps> = ({ duty, onDutyClick }) => {
   );
 };
 
-DutyCard.displayName = 'DutyCard';
-
 export default DutyCard;

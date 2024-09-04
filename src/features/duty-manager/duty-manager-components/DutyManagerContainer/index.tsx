@@ -100,6 +100,4 @@ function isDutyAssignable(duty: Duty, assignedDuties: Duty[]): boolean {
   return true;
 }
 
-DutyManagerContainer.displayName = 'DutyManagerContainer';
-
 export default React.memo(DutyManagerContainer);
