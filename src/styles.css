@@ -113,17 +113,18 @@ button:focus-visible {
 
 .duty-card {
   text-align: start;
-  border: 1px solid #007bff;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
   padding: 10px;
   margin-bottom: 10px;
   cursor: pointer;
-  background-color: #e9f2ff;
+  background-color: #646cff29;
   width: min(100%, 230px);
   border-radius: 8px;
 }
 
 .duty-card:hover {
-  background-color: #d0e4ff;
+  background-color: #646cff61;
 }
 
 .duty-card:disabled {
@@ -153,4 +154,5 @@ button:focus-visible {
   justify-items: center;
   grid-template-columns: 1fr 1fr;
   border: 2px solid #000;
+  border-radius: 5px;
 }
