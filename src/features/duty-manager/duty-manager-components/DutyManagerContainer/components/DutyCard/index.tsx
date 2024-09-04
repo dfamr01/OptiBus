@@ -14,16 +14,21 @@ const DutyCard: React.FC<DutyCardProps> = ({ duty, onDutyClick }) => {
   const formattedStartTime = formatTimeFromISOString(start);
   const formattedEndTime = formatTimeFromISOString(end);
 
+  const onClick = () => {
+    onDutyClick(duty)
+  }
+
   return (
     <button
       dir="auto"
-      onClick={() => onDutyClick(duty)}
+      onClick={onClick}
       disabled={!!warning}
-      className="duty-card"
+      className={`duty-card ${warning ? 'disabled' : ''}`}
+      aria-label={`Duty ${name} at ${depot}, ${formattedDate}, ${formattedStartTime} to ${formattedEndTime}`}
     >
       <div className="duty-info">
         <span className="font-bold">{name}</span>
-        <span className="spacer">|</span>
+        <span className="spacer" aria-hidden="true">|</span>
         <span>{depot}</span>
       </div>
       <div className="duty-time">
@@ -31,8 +36,8 @@ const DutyCard: React.FC<DutyCardProps> = ({ duty, onDutyClick }) => {
         <span>{formattedStartTime} - {formattedEndTime}</span>
       </div>
       {warning && (
-        <div className="warning">
-          <span aria-label="warning">⚠️</span>
+        <div className="warning" role="alert">
+          <span aria-hidden="true">⚠️</span>
           <span className="warning-text">{warning}</span>
         </div>
       )}

@@ -85,6 +85,11 @@ body {
   cursor: not-allowed;
 }
 
+.duty-card:focus {
+  outline: 2px solid #646cff;
+  outline-offset: 2px;
+}
+
 .warning {
   font-size: 0.8rem;
 }

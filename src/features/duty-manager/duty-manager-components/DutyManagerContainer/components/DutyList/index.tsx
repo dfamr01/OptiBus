@@ -16,7 +16,7 @@ const DutyList: React.FC<DutyListProps> = ({
 }) => (
   <div className="duty-list">
     <h2>{title}</h2>
-    <div dir="auto" className="duty-card-container">
+    <div className="duty-card-container">
       {duties.map((duty) => (
         <DutyCard
           onDutyClick={onDutyClick}
