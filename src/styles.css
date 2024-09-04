@@ -40,14 +40,15 @@ body {
   font-weight: bold;
 }
 
-.duty-list {
+.duty-section {
   display: flex;
   flex-direction: column;
   max-height: 100%;
   overflow: auto;
 }
 
-.duty-card-container {
+.duty-list {
+  list-style-type: none;
   overflow: auto;
   max-height: 100%;
   display: flex;
@@ -98,7 +99,7 @@ body {
   font-style: italic;
 }
 
-.duty-list {
+.duty-section {
   display: flex;
   flex-direction: column;
 }

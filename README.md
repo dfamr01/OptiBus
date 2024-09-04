@@ -36,7 +36,7 @@ src/
 │       ├── duty-manager-components/
 │       │   └── DutyManagerContainer/
 │       │       ├── components/
-│       │       │   └── DutyList/
+│       │       │   └── DutySection/
 │       │       │       ├── __tests__/
 │       │       │       └── index.tsx
 │       │       └── index.tsx

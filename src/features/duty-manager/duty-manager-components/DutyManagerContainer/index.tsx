@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import DutyList from "./components/DutyList";
+import DutySection from "./components/DutySection";
 import data from "../../../../data.json";
 import { Duty as DutyT } from "../../../../shared/types/types";
 import { useDuty } from "../../duty-manager-hooks/duty-manager.hooks";
@@ -37,12 +37,12 @@ const DutyManagerContainer: React.FC = () => {
 
   return (
     <div className="duty-manager-container">
-      <DutyList
+      <DutySection
         title="Available duties"
         onDutyClick={assignDuty}
         duties={availableDutiesMemo}
       />
-      <DutyList
+      <DutySection
         title="Duties you've signed up for"
         onDutyClick={unassignDuty}
         duties={assignedDutiesMemo}

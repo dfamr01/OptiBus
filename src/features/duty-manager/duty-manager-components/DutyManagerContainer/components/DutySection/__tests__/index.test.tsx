@@ -1,12 +1,12 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { render, screen, fireEvent } from "@testing-library/react";
-import DutyList from "../index";
+import DutySection from "../index";
 import React from "react"; // Add this line
 import { DriverShiftRule } from "../../../../../../../shared/models/rules/DriverShiftRule";
 import { RuleManager } from "../../../../../../../shared/models/rules/RuleManager";
 import { BusDuty } from "../../../../../../../shared/models/duties/BusDuty";
 
-describe("DutyList", () => {
+describe("DutySection", () => {
   const mockRuleManager = new RuleManager();
   mockRuleManager.addRule(new DriverShiftRule(8));
   const dutiesMockData = [
@@ -44,7 +44,7 @@ describe("DutyList", () => {
 
   test("renders the title", () => {
     render(
-      <DutyList
+      <DutySection
         title="Available Duties"
         duties={duties}
         onDutyClick={mockOnDutyClick}
@@ -57,7 +57,7 @@ describe("DutyList", () => {
 
   test("renders the list of duties", () => {
     render(
-      <DutyList
+      <DutySection
         title="Available Duties"
         duties={duties}
         onDutyClick={mockOnDutyClick}
@@ -72,7 +72,7 @@ describe("DutyList", () => {
 
   test("calls onDutyClick when a duty is clicked", () => {
     render(
-      <DutyList
+      <DutySection
         title="Available Duties"
         duties={duties}
         onDutyClick={mockOnDutyClick}
@@ -94,7 +94,7 @@ describe("DutyList", () => {
 
   test("renders empty state when no duties are provided", () => {
     render(
-      <DutyList
+      <DutySection
         title="Available Duties"
         duties={[]}
         onDutyClick={mockOnDutyClick}
