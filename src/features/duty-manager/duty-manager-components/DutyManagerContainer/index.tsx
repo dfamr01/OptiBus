@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
-import DutySection from "./components/DutySection";
 import data from "../../../../data.json";
+import DutySection from "./components/DutySection";
 import { Duty as DutyT } from "../../../../shared/types/types";
 import { useDuty } from "../../duty-manager-hooks/duty-manager.hooks";
 import { Duty } from "../../../../shared/models/duties/Duty";
