@@ -147,7 +147,7 @@ export class BusDuty extends Duty {
     this.ruleManager = ruleManager;
   }
 
-  restPeriod(otherDuty: Duty): number | null {
+  restInterval(otherDuty: Duty): number | null {
     if (this.ruleManager) {
       return this.ruleManager.getApplicableRestPeriod(this, otherDuty);
     }

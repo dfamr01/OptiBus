@@ -11,7 +11,7 @@ class TestRule extends Rule {
     return true; // Always true for testing
   }
 
-  get restPeriod(): number {
+  get restInterval(): number {
     return this.testRestPeriod;
   }
 }
@@ -32,6 +32,6 @@ describe("Rule", () => {
     };
 
     expect(testRule.condition(mockDuty)).toBe(true);
-    expect(testRule.restPeriod).toBe(8);
+    expect(testRule.restInterval).toBe(8);
   });
 });

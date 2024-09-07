@@ -45,7 +45,7 @@ const sortDuties = (duties: Duty[]): Duty[] => {
 };
 
 /**
- * Processes available duties, checking for overlaps and rest period violations
+ * Processes available duties, checking for overlaps and rest interval violations
  * @param {Duty[]} availableDuties - The available duties to process
  * @param {Duty[]} assignedDuties - The assigned duties to check against
  * @returns {Duty[]} Processed available duties with warnings
@@ -89,17 +89,17 @@ const checkForOverlap = (duty: Duty, assignedDuties: Duty[]): boolean => {
 };
 
 /**
- * Checks if a duty violates the rest period of any assigned duty
+ * Checks if a duty violates the rest interval of any assigned duty
  * @param {Duty} duty - The duty to check
  * @param {Duty[]} assignedDuties - The assigned duties to check against
- * @returns {number | null} The violated rest period in hours, or null if no violation
+ * @returns {number | null} The violated rest interval in hours, or null if no violation
  */
 const checkForRestViolation = (
   duty: Duty,
   assignedDuties: Duty[]
 ): number | null => {
   for (const assignedDuty of assignedDuties) {
-    const restNeeded = assignedDuty.restPeriod(duty);
+    const restNeeded = assignedDuty.restInterval(duty);
     if (restNeeded) {
       return restNeeded;
     }

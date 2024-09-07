@@ -1,7 +1,7 @@
 import { Duty } from "../Duty";
 
 class TestDuty extends Duty {
-  restPeriod(_: Duty): number {
+  restInterval(_: Duty): number {
     return 0; // Dummy implementation
   }
 }

@@ -1,7 +1,7 @@
 import { Duty } from "../duties/Duty";
 
 /**
- * Abstract base class representing a rule for determining rest periods between duties.
+ * Abstract base class representing a rule for determining rest intervals between duties.
  */
 export abstract class Rule {
   /**
@@ -13,8 +13,8 @@ export abstract class Rule {
   abstract condition(duty: Duty, otherDuty?: Duty): boolean;
 
   /**
-   * Gets the rest period associated with this rule.
-   * @returns {number} The duration of the rest period in some time unit (e.g., minutes or hours).
+   * Gets the rest interval associated with this rule.
+   * @returns {number} The duration of the rest interval in some time unit (e.g., minutes or hours).
    */
-  abstract get restPeriod(): number;
+  abstract get restInterval(): number;
 }

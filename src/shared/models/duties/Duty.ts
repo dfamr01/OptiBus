@@ -51,10 +51,10 @@ export abstract class Duty implements DutyT {
   }
 
   /**
-   * Calculates the rest period between this duty and another duty.
-   * @param {Duty} otherDuty - The other duty to calculate the rest period against.
-   * @returns {number} The rest period in some time unit (e.g., hours or minutes).
+   * Calculates the rest interval between this duty and another duty.
+   * @param {Duty} otherDuty - The other duty to calculate the rest interval against.
+   * @returns {number} The rest interval in some time unit (e.g., hours or minutes).
    * @abstract
    */
-  abstract restPeriod(otherDuty: Duty): number;
+  abstract restInterval(otherDuty: Duty): number;
 }

@@ -10,7 +10,7 @@ function createMockBusDuty(dutyData: DutyT): jest.Mocked<BusDuty> {
   return {
     ...dutyData,
     overlapsWith: jest.fn(),
-    restPeriod: jest.fn(),
+    restInterval: jest.fn(),
   } as unknown as jest.Mocked<BusDuty>;
 }
 
@@ -22,7 +22,7 @@ describe("DriverShiftRule", () => {
     jest.clearAllMocks();
   });
 
-  test("condition returns true when rest period is less than specified hours", () => {
+  test("condition returns true when rest interval is less than specified hours", () => {
     const duty1 = createMockBusDuty({
       id: 1,
       name: "Duty 1",
@@ -41,7 +41,7 @@ describe("DriverShiftRule", () => {
     expect(driverShiftRule.condition(duty1, duty2)).toBe(true);
   });
 
-  test("condition returns false when rest period is equal to or greater than specified hours", () => {
+  test("condition returns false when rest interval is equal to or greater than specified hours", () => {
     const duty1 = createMockBusDuty({
       id: 1,
       name: "Duty 1",
@@ -79,7 +79,7 @@ describe("DriverShiftRule", () => {
     expect(driverShiftRule.condition(duty1, duty2)).toBe(true);
   });
 
-  test("restPeriod getter returns the specified hours", () => {
-    expect(driverShiftRule.restPeriod).toBe(8);
+  test("restInterval getter returns the specified hours", () => {
+    expect(driverShiftRule.restInterval).toBe(8);
   });
 });

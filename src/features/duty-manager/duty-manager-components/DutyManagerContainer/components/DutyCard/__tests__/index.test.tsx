@@ -74,9 +74,9 @@ describe("DutyCard Component with mocked ruleManager", () => {
   });
 
   it("should interact with the mocked ruleManager correctly", () => {
-    // Assuming `restPeriod` is called within DutyCard or elsewhere in the application
-    const restPeriod = mockDuty.restPeriod(mockDuty);
-    expect(mockRuleManager.getApplicableRestPeriod).toHaveBeenCalled();
-    expect(restPeriod).toBe(8); // Based on the mock implementation
+    // Assuming `restInterval` is called within DutyCard or elsewhere in the application
+    const restInterval = mockDuty.restInterval(mockDuty);
+    expect(mockRuleManager.getApplicableRestInterval).toHaveBeenCalled();
+    expect(restInterval).toBe(8); // Based on the mock implementation
   });
 });

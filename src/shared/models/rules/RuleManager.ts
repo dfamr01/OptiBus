@@ -2,7 +2,7 @@ import { Duty } from "../duties/Duty";
 import { Rule } from "./Rule";
 
 /**
- * Manages a collection of rules and determines applicable rest periods based on these rules.
+ * Manages a collection of rules and determines applicable rest intervals based on these rules.
  */
 export class RuleManager {
   /** Array to store the rules */
@@ -27,15 +27,15 @@ export class RuleManager {
   }
 
   /**
-   * Determines the applicable rest period based on the given duty and optional other duty.
+   * Determines the applicable rest restInterval based on the given duty and optional other duty.
    * @param {Duty} duty - The primary duty to check against the rules.
    * @param {Duty} [otherDuty] - Optional secondary duty to consider in rule evaluation.
-   * @returns {number | null} The applicable rest period if a matching rule is found, or null if no rule applies.
+   * @returns {number | null} The applicable rest restInterval if a matching rule is found, or null if no rule applies.
    */
-  getApplicableRestPeriod(duty: Duty, otherDuty?: Duty): number | null {
+  getApplicableRestInterval(duty: Duty, otherDuty?: Duty): number | null {
     for (const rule of this.rules) {
       if (rule.condition(duty, otherDuty)) {
-        return rule.restPeriod;
+        return rule.restInterval;
       }
     }
     return null;

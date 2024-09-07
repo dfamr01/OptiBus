@@ -81,7 +81,7 @@ describe('DutyManagerContainer', () => {
 
     // Check that there are warning messages for "Less than 8hrs since last duty"
     const restWarnings = within(availableDutiesList).queryAllByText('Less than 8hrs since last duty');
-    expect(restWarnings.length).toBeGreaterThan(0); // Ensure that at least one rest period warning is present
+    expect(restWarnings.length).toBeGreaterThan(0); // Ensure that at least one rest interval warning is present
   });
 
   it('prevents assigning overlapping duties', () => {

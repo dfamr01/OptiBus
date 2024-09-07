@@ -92,8 +92,8 @@ function isDutyAssignable(duty: Duty, assignedDuties: Duty[]): boolean {
     return false;
   }
 
-  if (assignedDuties.length > 0 && assignedDuties.some((d) => d.restPeriod(duty))) {
-    alert("Cannot assign duty due to insufficient rest period.");
+  if (assignedDuties.length > 0 && assignedDuties.some((d) => d.restInterval(duty))) {
+    alert("Cannot assign duty due to insufficient rest interval.");
     return false;
   }
 

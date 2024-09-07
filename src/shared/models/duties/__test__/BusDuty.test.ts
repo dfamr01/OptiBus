@@ -30,7 +30,7 @@ describe("BusDuty", () => {
     expect(busDuty.ruleManager).toBe(mockRuleManager);
   });
 
-  describe("restPeriod", () => {
+  describe("restInterval", () => {
     test("calls ruleManager.getApplicableRestPeriod with correct arguments", () => {
       const otherDuty = new BusDuty({
         id: 2,
@@ -41,11 +41,11 @@ describe("BusDuty", () => {
         ruleManager: mockRuleManager,
       });
 
-      mockRuleManager.getApplicableRestPeriod.mockReturnValue(8);
+      mockRuleManager.getApplicableRestInterval.mockReturnValue(8);
 
-      const result = busDuty.restPeriod(otherDuty);
+      const result = busDuty.restInterval(otherDuty);
 
-      expect(mockRuleManager.getApplicableRestPeriod).toHaveBeenCalledWith(
+      expect(mockRuleManager.getApplicableRestInterval).toHaveBeenCalledWith(
         busDuty,
         otherDuty
       );
@@ -71,7 +71,7 @@ describe("BusDuty", () => {
         ruleManager: null,
       });
 
-      const result = busDutyWithoutRuleManager.restPeriod(otherDuty);
+      const result = busDutyWithoutRuleManager.restInterval(otherDuty);
 
       expect(result).toBeNull();
     });

@@ -11,7 +11,7 @@ class MockRule extends Rule {
     return this.testCondition;
   }
 
-  get restPeriod(): number {
+  get restInterval(): number {
     return this.testRestPeriod;
   }
 }
@@ -29,7 +29,7 @@ describe("RuleManager", () => {
     expect((ruleManager as any).rules).toContain(rule);
   });
 
-  test("getApplicableRestPeriod returns the rest period of the first matching rule", () => {
+  test("getApplicableRestPeriod returns the rest interval of the first matching rule", () => {
     const rule1 = new MockRule(false, 8);
     const rule2 = new MockRule(true, 10);
     const rule3 = new MockRule(true, 12);
@@ -45,7 +45,7 @@ describe("RuleManager", () => {
       end: "2022-11-01T08:45:00Z",
     };
 
-    expect(ruleManager.getApplicableRestPeriod(mockDuty)).toBe(10);
+    expect(ruleManager.getApplicableRestInterval(mockDuty)).toBe(10);
   });
 
   test("getApplicableRestPeriod returns null if no rule matches", () => {
@@ -62,7 +62,7 @@ describe("RuleManager", () => {
       end: "2022-11-01T08:45:00Z",
     };
 
-    expect(ruleManager.getApplicableRestPeriod(mockDuty)).toBeNull();
+    expect(ruleManager.getApplicableRestInterval(mockDuty)).toBeNull();
   });
 
   test("constructor initializes rules if provided", () => {

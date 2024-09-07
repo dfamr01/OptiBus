@@ -2,7 +2,7 @@ import { Duty } from "../duties/Duty";
 import { Rule } from "./Rule";
 
 /**
- * Represents a rule for determining if a duty ends during day hours and requires a specific rest period.
+ * Represents a rule for determining if a duty ends during day hours and requires a specific rest interval.
  * @extends Rule
  */
 export class DayShiftRule extends Rule {
@@ -25,10 +25,10 @@ export class DayShiftRule extends Rule {
   }
 
   /**
-   * Gets the required rest period in hours after a day shift.
+   * Gets the required rest interval in hours after a day shift.
    * @returns {number} The number of hours required for rest after a day shift.
    */
-  get restPeriod(): number {
+  get restInterval(): number {
     return this.hours;
   }
 }

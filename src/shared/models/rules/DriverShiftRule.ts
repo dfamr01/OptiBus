@@ -2,7 +2,7 @@ import { Duty } from "../duties/Duty";
 import { Rule } from "./Rule";
 
 /**
- * Represents a rule for determining rest periods between driver shifts.
+ * Represents a rule for determining rest intervals between driver shifts.
  * @extends Rule
  */
 export class DriverShiftRule extends Rule {
@@ -18,7 +18,7 @@ export class DriverShiftRule extends Rule {
    * Determines if this rule applies to the given duties.
    * @param {Duty} duty - The first duty to evaluate.
    * @param {Duty} otherDuty - The second duty to evaluate.
-   * @returns {boolean} True if the rest period between duties is less than the required hours, false otherwise.
+   * @returns {boolean} True if the rest interval between duties is less than the required hours, false otherwise.
    */
   condition(duty: Duty, otherDuty: Duty): boolean {
     const [earlierDuty, laterDuty] = this.orderDuties(duty, otherDuty);
@@ -27,10 +27,10 @@ export class DriverShiftRule extends Rule {
   }
 
   /**
-   * Gets the required rest period in hours.
+   * Gets the required rest interval in hours.
    * @returns {number} The number of hours required for rest between shifts.
    */
-  get restPeriod(): number {
+  get restInterval(): number {
     return this.hours;
   }
 

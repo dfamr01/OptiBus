@@ -25,17 +25,17 @@ export class BusDuty extends Duty {
   }
 
   /**
-   * Calculates the rest period between this duty and another duty based on the applicable rules.
-   * @param {Duty} otherDuty - The other duty to calculate the rest period against.
-   * @returns {number | null} The applicable rest period in hours, or null if no rule manager is set or no applicable rule is found.
+   * Calculates the rest interval between this duty and another duty based on the applicable rules.
+   * @param {Duty} otherDuty - The other duty to calculate the rest interval against.
+   * @returns {number | null} The applicable rest interval in hours, or null if no rule manager is set or no applicable rule is found.
    */
-  restPeriod(otherDuty: Duty): number | null {
+  restInterval(otherDuty: Duty): number | null {
     if (this.ruleManager) {
-      const restPeriod = this.ruleManager.getApplicableRestPeriod(
+      const restInterval = this.ruleManager.getApplicableRestInterval(
         this,
         otherDuty
       );
-      return restPeriod;
+      return restInterval;
     }
     return null;
   }
