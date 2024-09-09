@@ -1,6 +1,7 @@
 # OptiBus Duty Manager
 
 ## Introduction
+
 This repository contains a small application created as part of the Optibus home task. The purpose of this application is to simulate a system where bus drivers can sign up for driving duties, while adhering to certain safety regulations.
 
 The application is built using React and TypeScript and demonstrates key functionality for selecting and managing bus driving duties, with specific constraints to ensure safety.
@@ -8,7 +9,7 @@ The application is built using React and TypeScript and demonstrates key functio
 ## Project Links
 
 - GitHub Repository: [https://github.com/dfamr01/OptioBus](https://github.com/dfamr01/OptioBus)
-- CodeSandbox: [https://codesandbox.io/p/devbox/7shspn](https://codesandbox.io/p/devbox/7shspn)
+- CodeSandbox: [https://codesandbox.io/p/devbox/7shspn](https://codesandbox.io/p/sandbox/optibus-home-task-starter-forked-nrwr7l)
 
 ## Features
 
@@ -77,17 +78,20 @@ This structure reflects a feature-based organization with shared components and 
 ## Setup and Running
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/dfamr01/OptioBus.git
    ```
 
 2. Install dependencies:
+
    ```
    cd OptioBus
    npm install
    ```
 
 3. Run the application:
+
    ```
    npm start
    ```
@@ -157,6 +161,7 @@ export class BusDuty extends Duty {
 ```
 
 This design allows for:
+
 - Easy addition of new duty types (e.g., `TaxiDuty`, `ShuttleDuty`) by extending `Duty`.
 - Flexible rule management through the `RuleManager` interface.
 - Clear separation of concerns between duty types and rule application.
