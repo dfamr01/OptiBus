@@ -20,6 +20,8 @@ The application is built using React and TypeScript and demonstrates key functio
    - Prevention of overlapping duties
    - Ensuring 8 hours of rest between duties
 5. Ability to unassign from duties.
+6. Support for Language Indentation - Includes support for right-to-left (RTL) languages
+7. Responsive design adapting to various screen sizes and aspect ratios
 
 ## Technology Stack
 
